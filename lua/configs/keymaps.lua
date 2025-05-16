@@ -4,7 +4,7 @@ local opt = {noremap = true, silent = true }
 -- 基础操作
 vim.keymap.set("n", "<leader>p", ":set invpaste paste?<CR>", opt) -- 格式化文件中所有代码行（nvim-treesitter 代码格式化）
 
-vim.keymap.set("n", "<leader>i", "gg=G", opt) -- 格式化文件中所有代码行（nvim-treesitter 代码格式化）
+vim.keymap.set("n", "<leader>t", "gg=G", opt) -- 格式化文件中所有代码行（nvim-treesitter 代码格式化）
 
 -- 替代 gcc 的快捷键  
 -- vim.keymap.set("n", "<leader>c", "gcc", { noremap = true, silent = true }) -- 默认将 leader 设置为反斜杠 '\'  
@@ -48,22 +48,25 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", vim.cmd.write, { desc = "Save Fi
 -- Go IDE
 -- 绑定 Ctrl+i 快捷键执行 GoFillStruct  
 -- vim.keymap.set("n", "<C-i>", ":GoFillStruct<CR>", { desc = "Fill Struct in Go" })  
-vim.keymap.set("n", "<leader>fe", ":GoIfErr<CR>", { desc = "Fill Struct in Go" })  
-vim.keymap.set("n", "<leader>fs", ":GoFillStruct<CR>", { desc = "Fill Struct in Go" })  
+vim.keymap.set("n", "fe", ":GoIfErr<CR>", { desc = "Fill Struct in Go" })  
+vim.keymap.set("n", "fs", ":GoFillStruct<CR>", { desc = "Fill Struct in Go" })  
 vim.keymap.set("n", "<leader>fc", ":GoFillSwitch<CR>", { desc = "Fill Struct in Go" })  
 vim.keymap.set("n", "<leader>ta", ":GoAddTag<CR>", { desc = "Fill Struct in Go" })  
 vim.keymap.set("n", "<leader>tr", ":GoRmTag<CR>", { desc = "Fill Struct in Go" })  
 vim.keymap.set("n", "<leader>tc", ":GoClearTag<CR>", { desc = "Fill Struct in Go" })  
+vim.keymap.set("n", "<leader>i", ":GoImports<CR>", { desc = "Fill Struct in Go" })  
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)  
 vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", { desc = "Go to Definition" })  
+vim.keymap.set("n", "<CR>", "<cmd>FzfLua lsp_definitions<CR>", { desc = "Go to Definition" })
 vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", { desc = "Go to Definition" })  
 vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", { desc = "Go to Definition" })  
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)  
 
 -- FZF-Lua
 vim.keymap.set("n", "<C-e>", "<cmd>FzfLua buffers<CR>", { desc = "buffers" })  
-vim.keymap.set("n", "<C-f>", "<cmd>FzfLua live_grep<CR>", { desc = "lines" })  
-vim.keymap.set("n", "<leader>f", "<cmd>FzfLua lgrep_curbuf<CR>", { desc = "lines" })  
+vim.keymap.set("n", "ss", "<cmd>FzfLua live_grep<CR>", { desc = "lines" })  
+vim.keymap.set("n", "gf", "<cmd>FzfLua files<CR>", { desc = "lines" })  
+vim.keymap.set("n", "<C-f>", "<cmd>FzfLua lgrep_curbuf<CR>", { desc = "lines" })  
 vim.keymap.set("n", "<leader>r", "<cmd>FzfLua oldfiles<CR>", { desc = "mru" })   --mru: most recent used
 vim.keymap.set("n", "<leader>s", "<cmd>FzfLua treesitter<CR>", { desc = "mru" })   --mru: most recent used
 vim.keymap.set("n", "<leader>h", "<cmd>FzfLua search_history<CR>", { desc = "lines" })  

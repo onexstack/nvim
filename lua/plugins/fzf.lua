@@ -18,7 +18,7 @@ return {
         },
         files = {
             formatter = "path.filename_first",
-            path_shorten = 2,
+            -- path_shorten = 5,
         },
         diagnostics = {
             split = "belowright new",

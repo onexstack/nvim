@@ -19,8 +19,11 @@ return {
       end,
       settings = {  
         gopls = {  
-          analyses = { unusedparams = true },  
-          staticcheck = true,  
+          analyses = { 
+            unusedparams = false,
+            fieldalignment = false,
+          },  
+          staticcheck = false,  
           gofumpt = true,
           buildFlags = { "-tags=integration" }  
         }  

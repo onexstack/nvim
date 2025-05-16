@@ -6,4 +6,6 @@ require("configs.keymaps") -- 加载全局快捷键
 vim.opt.termguicolors = true -- 启用真彩色支持--
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd.colorscheme("tokyonight-night") -- 应用主题
+vim.diagnostic.disable()
+vim.lsp.inlay_hint.enable(false)
 -- vim.cmd.colorscheme("gruvbox") -- 应用主题
