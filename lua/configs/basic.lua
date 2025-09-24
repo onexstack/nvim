@@ -124,3 +124,6 @@ vim.o.wildmenu = true           -- 命令行补全时显示菜单
 -- 16. 系统剪切板  
 ------------------------------------------------------------------------------  
 vim.opt.clipboard = "unnamedplus"  -- 使用系统剪贴板  
+
+-- vim.lsp.inlay_hint.enable(0, false)
+-- vim.lsp.inlay_hint.enable(false)

@@ -3,6 +3,9 @@ return {
   "neovim/nvim-lspconfig",  
   -- "williamboman/mason.nvim",  
   -- "williamboman/mason-lspconfig.nvim",  
+  opts = {
+    inlay_hints = { enabled = false },
+  },
   config = function()  
     local lsp_utils = require("lspconfig.util")  
     -- require("mason").setup()
@@ -23,6 +26,16 @@ return {
             unusedparams = false,
             fieldalignment = false,
           },  
+          -- 关闭所有 Inlay Hints
+          hints = {
+            assignVariableTypes      = false,
+            compositeLiteralFields   = false,
+            compositeLiteralTypes    = false,
+            constantValues           = false,
+            functionTypeParameters   = false,
+            parameterNames           = false,
+            rangeVariableTypes       = false,
+          },
           staticcheck = false,  
           gofumpt = true,
           buildFlags = { "-tags=integration" }  
